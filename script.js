@@ -1,6 +1,9 @@
 const getSumBtn = document.createElement("button");
+let table=document.getElementById("table");
+let prices=document.querySelectorAll(".price")
 getSumBtn.append("Get Total Price");
 document.body.appendChild(getSumBtn);
+
 
 const getSum = () => {
 //Add your code here
@@ -21,4 +24,3 @@ const getSum = () => {
 };
 
 getSumBtn.addEventListener("click", getSum);
-
