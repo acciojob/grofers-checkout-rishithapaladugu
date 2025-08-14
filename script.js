@@ -1,26 +1,12 @@
-const getSumBtn = document.createElement("button");
-let table=document.getElementById("table");
-let prices=document.querySelectorAll(".price")
-getSumBtn.append("Get Total Price");
-document.body.appendChild(getSumBtn);
-
-
-const getSum = () => {
-//Add your code here
-	let sum=0;
-	for(let i=0;i<prices.length;i++){
-	let price=parseInt(prices[i].textContent);
-	sum=sum+price;
-}
-	let tr=table.insertRow();
-	let td1=tr.insertCell(0);
-	let td2=tr.insertCell(1);
-	td1.textContent="total"
-	td2.textContent=sum;
-	td2.id="ans"
-	
-	
-  
-};
-
-getSumBtn.addEventListener("click", getSum);
+let prices = document.querySelectorAll('.prices');
+let total = 0;
+prices.forEach(price => {
+    total += parseFloat(price.textContent);
+});
+let table = document.getElementById('groceryTable');
+let newRow = document.createElement('tr');
+let newCell = document.createElement('td');
+newCell.colSpan = 2;
+newCell.textContent = 'Total Price: ' + total;
+newRow.appendChild(newCell);
+table.appendChild(newRow);
